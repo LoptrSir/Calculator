@@ -1,1 +1,38 @@
-color: orange
+.calc {
+  background-color: #4caf50; /* Green */
+  border: 2px solid black;
+  /*color: white;*/
+  padding: 15px 15px;
+  /*text-align: center;*/
+  /*text-decoration: none;*/
+  display: inline-block;
+  /*font-size: 16px;*/
+}
+
+#display {
+  background-color: darkgrey;
+  text-align: right;
+  margin: 4px;
+  margin-left: 0px;
+  width: 120px;
+  height:30px;
+  font: 16px black;
+  float: right;
+  border-radius: 10px;
+}
+/*row how do I align the buttons next to each other to match button padding? */
+.btn {
+  background-color: darkgrey;
+  border: 2px solid grey;
+  padding: 5px 5xp;
+  margin: 2px;
+  text-align: center;
+  font: 16px black;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+#c {
+    color:  rgb(229, 19, 180);
+}
