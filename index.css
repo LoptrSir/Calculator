@@ -14,13 +14,16 @@
   text-align: right;
   margin: 4px;
   margin-left: 0px;
-  width: 120px;
+  width: 115px;
   height:30px;
   font: 16px black;
   float: right;
   border-radius: 10px;
 }
 /*row how do I align the buttons next to each other to match button padding? */
+.row2 {
+    float: left;
+}
 .btn {
   background-color: darkgrey;
   border: 2px solid grey;
