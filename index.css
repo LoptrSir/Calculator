@@ -35,7 +35,9 @@
   height: 30px;
   border-radius: 10px;
 }
-
+.operator{
+  color:blue;
+}
 #c {
     color:  rgb(229, 19, 180);
 }

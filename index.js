@@ -1,12 +1,13 @@
 // Calculator project started 10/19/22
 
+//calculator function
 const maths = (a, b, c) => {
   let result = [0];
   if (b == "+") result = (+a + +c);
   if (b == "-") result = a - c;
   if (b == "*") result = a * c;
   if (b == "/")
-    if (c == 0) result = "ERROR";
+    if (c == 0) result = "DANGER Will Robinson";
     else result = a / c;
   console.log("maths", result);
   return result;
