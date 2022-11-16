@@ -9,12 +9,13 @@ let btnValue = "";
 const maths = (a, b, c) => {
   let result = [0];
   //let roundedNum = (Math.round( result * 100 ) / 100).toFixed(2);
-  if (b == "+") (result = (+a + +c).toFixed(2)), (btnValue = +a + +c);
-  if (b == "-") (result = (a - c).toFixed(2)), (btnValue = a - c);
-  if (b == "*") (result = (a * c).toFixed(2)), (btnValue = a * c);
+  if (b == "+") (result = (+a + +c).toFixed(2));
+  if (b == "-") (result = (a - c).toFixed(2))
+  if (b == "*") (result = (a * c).toFixed(2));
   if (b == "/")
     if (c == 0) (result = "DANGER Will Robinson"), (btnValue = "Error");
-    else (result = (a / c).toFixed(2)), (btnValue = a / c);
+    else (result = (a / c).toFixed(2));
+    btnValue = result;
   console.log("maths", result);
   setValue();
   return result;
