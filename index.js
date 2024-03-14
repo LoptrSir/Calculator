@@ -1,34 +1,81 @@
 // Calculator project started 10/19/22
 
+let nbr1 = "";
+let operator = "";
+let nbr2 = "";
+let btnValue = "";
+
+//calculator function
 const maths = (a, b, c) => {
-  let result = [];
-  if (c == "+") result = a + b;
-  if (c == "-") result = a - b;
-  if (c == "*") result = a * b;
-  if (c == "/")
-    if (b === 0) result = "ERROR";
-    else result = a / b;
-  console.log(result);
+  let result = [0];
+  //let roundedNum = (Math.round( result * 100 ) / 100).toFixed(2);
+  if (b == "+") (result = (+a + +c).toFixed(2));
+  if (b == "-") (result = (a - c).toFixed(2))
+  if (b == "*") (result = (a * c).toFixed(2));
+  if (b == "/")
+    if (c == 0) (result = "DANGER Will Robinson"), (btnValue = "Error");
+    else (result = (a / c).toFixed(2));
+    btnValue = result;
+  console.log("maths", result);
+  setValue();
   return result;
 };
 
-// begin unproven code. button click is working but not producing btn value.
+//display functions
+
+function setValue() {
+  document.getElementById("display").innerHTML = btnValue;
+}
+
+//Button inputs
 let buttons = document.getElementsByClassName("btn");
-console.log(buttons);
+//console.log('buttons', buttons);
+
+function xyz(event) {
+  let btnVal = event.currentTarget.value;
+  console.log("bv1", btnVal);
+  console.log("xyz1", nbr1, operator, nbr2);
+
+  if (btnVal == "=") (btnVal = ""), maths(nbr1, operator, nbr2);
+  console.log("bv2", btnVal);
+  console.log("xyz2", nbr1, operator, nbr2);
+
+  if (btnVal == "c")
+    (nbr1 = ""), (operator = ""), (nbr2 = ""), (btnVal = ""), (btnValue = "");
+  console.log("bv3", btnVal);
+  console.log("xyz3", nbr1, operator, nbr2);
+
+  if (btnVal == "+" || btnVal == "-" || btnVal == "*" || btnVal == "/")
+    (operator = btnVal), (btnValue += btnVal), (btnVal = "");
+  setValue();
+  console.log("bv4", btnVal);
+  console.log("xyz4", nbr1, operator, nbr2);
+
+  if (
+    operator == "" &&
+    (btnVal != "+" ||
+      btnVal != "-" ||
+      btnVal != "*" ||
+      btnVal != "/" ||
+      btnVal != "c")
+  )
+    (nbr1 += btnVal), (btnValue += btnVal);
+  setValue();
+  if (
+    operator != "" &&
+    (btnVal != "+" ||
+      btnVal == "-" ||
+      btnVal != "*" ||
+      btnVal != "/" ||
+      btnVal != "c")
+  )
+    (nbr2 += btnVal), (btnValue += btnVal);
+  setValue();
+  console.log("bv5", btnVal);
+  console.log("xyz5", nbr1, operator, nbr2);
+  console.log("btnvalue", btnValue);
+}
+
 for (let i = 0; i < buttons.length; i += 1) {
   buttons[i].addEventListener("click", xyz);
-
-  function xyz(x) {
-    let nbr1 = "0";
-    let operator = null;
-    let nbr2 = "0";
-    const sum = maths(nbr1, operator, nbr2);
-    if (x == "=") x = sum;
-    if (x == "+" || "-" || "*" || "/") x = operator;
-    if (operator == null) x = nbr1;
-    else x = nbr2;
-    console.log(nbr1, operator, nbr2);
-  }
 }
-//inputs(7, '+', 9);
-//maths(7, 23, "+");
